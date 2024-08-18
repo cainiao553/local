@@ -1,0 +1,44 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tlias
+    username: root
+    password: 1234
+mybatis-plus:
+  type-aliases-package: com.itheima.po
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: auto
+  mapper-locations: classpath*:/mapper/**/*.xml
+logging:
+  level:
+    com.hmall: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+knife4j:
+  enable: true
+  openapi:
+    title: 黑马教学辅助系统接口文档
+    description: "黑马教学辅助系统接口文档"
+    email: chenhaobin@itcast.cn
+    concat: chb
+    url: https://www.itcast.cn
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.itheima.controller
+
+aliyun:
+  endpoint: https://oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5tLsvdQSHv3f4U3xgPpP
+  accessKeySecret: kLLaAYCqt0A9FZr5rdNeBHqJWGnqY1
+  bucketName: chb2024
